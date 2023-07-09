@@ -26,3 +26,20 @@ const listItems = [
   { id: 21, name: "Zahra", family: "Gholami" },
   { id: 22, name: "Matin", family: "Sahebi" },
 ];
+
+let userListContainer = document.querySelector("#list");
+let paginationContainer = document.querySelector("#pagination");
+
+let currentPage = 1;
+let rowCount = 5;
+
+function displayUsersList(allUsersArray, userContainer, rowCount, currentPage) {
+  userContainer.innerHTML = "";
+
+  let endIndex = rowCount * currentPage;
+  let startIndex = endIndex - rowCount;
+  let paginatedUsers = allUsersArray.slice(startIndex, endIndex);
+  console.log(paginatedUsers);
+}
+
+displayUsersList(listItems, userListContainer, rowCount, currentPage);
